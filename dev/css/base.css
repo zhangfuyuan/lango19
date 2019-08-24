@@ -1,0 +1,27 @@
+/* 公共样式 */
+.flex-h {
+	display: flex;
+}
+
+.flex-h-c {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.flex-h-vc {
+	display: flex;
+	align-items: center;
+}
+
+.flex-v {
+	display: flex;
+	flex-direction: column;
+}
+
+.flex-v-c {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
