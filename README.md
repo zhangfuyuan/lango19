@@ -233,7 +233,11 @@ gulp.task('js', () => {
 <li><a href="http://www.cddd.com">校招</a></li>
 ```
 
-<br>
-<br>
-<br>
+### 6、国际化
 
+* 使用 [jquery.i18n.js](https://github.com/T-baby/jquery.i18n/blob/master/README-CN.md)
+
+
+<br>
+<br>
+<br>
