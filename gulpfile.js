@@ -12,15 +12,22 @@ const gulp         = require('gulp'),
       imageResize  = require('gulp-image-resize'),
       rename       = require('gulp-rename');
 
-const cssBeforeSrc        = 'src/css/*.css',
-      cssAfterSrc         = 'build/lango19/css/',
-      jsBeforeSrc         = 'src/js/*.js',
-      jsAfterSrc          = 'build/lango19/js/',
-      imagesBeforeSrc     = 'src/images/*.+(jpeg|jpg|png)',
-      imagesAfterSrc      = 'build/lango19/images/',
-      imagesThumbAfterSrc = 'build/lango19/images/thumb/',
-      htmlBeforeSrc       = 'src/html/*.html',
-      htmlAfterSrc        = 'build/';
+const cssBeforeSrc         = 'src/css/*.css',
+      cssAfterSrc          = 'build/lango19/css/',
+      jsBeforeSrc          = 'src/js/*.js',
+      jsAfterSrc           = 'build/lango19/js/',
+      imagesBeforeSrc      = 'src/images/*.+(jpeg|jpg|png)',
+      imagesAfterSrc       = 'build/lango19/images/',
+      imagesThumbAfterSrc  = 'build/lango19/images/thumb/',
+      htmlBeforeSrc        = 'src/html/*.html',
+      htmlAfterSrc         = 'build/',
+      indexHrefList        = ['/build/', '//www.abbb.com', '//lango-tech.com'],
+      campusHrefList       = ['/build/campus.html', '//www.cddd.com', '//campus.lango-tech.com'],
+      hrefPrefixList       = ['.', '//www.abbb.com/xbh', '//lango-tech.com/xbh'],
+      hrefSuffixList       = ['.html', '', ''],
+      campusHrefPrefixList = ['.', '//www.cddd.com', '//campus.lango-tech.com'],
+      campusHrefSuffixList = ['.html', '', ''],
+      hrefIndex            = 0;
 
 gulp.task('html', () => {
   return gulp.src(htmlBeforeSrc)
@@ -29,7 +36,31 @@ gulp.task('html', () => {
                  version: {
                    src: null, 
                    tpl: Date.now() + ''
-                 }
+                 },
+                 indexHref: {
+                   src: null, 
+                   tpl: indexHrefList[hrefIndex]
+                 },
+                 campusHref: {
+                   src: null, 
+                   tpl: campusHrefList[hrefIndex]
+                 },
+                 hrefPrefix: {
+                   src: null, 
+                   tpl: hrefPrefixList[hrefIndex]
+                 },
+                 hrefSuffix: {
+                   src: null, 
+                   tpl: hrefSuffixList[hrefIndex]
+                 },
+                 campusHrefPrefix: {
+                   src: null, 
+                   tpl: campusHrefPrefixList[hrefIndex]
+                 },
+                 campusHrefSuffix: {
+                   src: null, 
+                   tpl: campusHrefSuffixList[hrefIndex]
+                 },
              }))
              .pipe(htmlmin({
                removeComments: true,
@@ -40,6 +71,7 @@ gulp.task('html', () => {
                ignoreCustomFragments: [/<!--\[if.+\]>/,/<!\[endif\]-->/]
              }))
              .pipe(gulp.dest(htmlAfterSrc))
+             .pipe(connect.reload())
 })
 
 gulp.task('js', () => {
@@ -76,7 +108,7 @@ gulp.task('image-resize', () => {
              .pipe(changed(imagesThumbAfterSrc))
              .pipe(imageResize({
                  width: 100,
-                 quality: .8,
+                 quality: .5,
                  cover: true
              }))
              .pipe(rename((path) => { path.basename += '_thumb' }))
@@ -91,11 +123,11 @@ gulp.task('watchs', () => {
 })
 
 gulp.task('connect', () => {
-    connect.server({
-        ip: '127.0.0.1',
-        livereload: true,
-        port: 8126
-    })
+  connect.server({
+      ip: '127.0.0.1',
+      livereload: true,
+      port: 8126
+  })
 })
 
 gulp.task('default', gulp.series(gulp.parallel('html', 'js', 'css', 'images', 'image-resize', 'watchs', 'connect')))

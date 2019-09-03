@@ -12,6 +12,9 @@
 
 * [Autoprefixer](https://github.com/postcss/autoprefixer) & [gulp-postcss](https://github.com/postcss/gulp-postcss) | [《PostCSS及其常用插件介绍》](https://blog.csdn.net/u010881899/article/details/85005106)
 
+* [《谷歌的ie9.js ie8.js ie7.js 解决IE5、IE6、IE7、IE8与W3C标准的冲突》](https://blog.csdn.net/roc1010/article/details/8601173)
+
+
 ### 2、适配桌面端和移动端
 
 * 参考 Bootstrap3 的 [响应式工具](https://v3.bootcss.com/css/#responsive-utilities) 媒体查询方案进行适配
@@ -48,6 +51,10 @@ public void index() {  //首页
 * 参考：[《web前端性能&SEO优化》](https://blog.csdn.net/xustart7720/article/details/79960591)
 
 * [《HTML5—新语义元素header、nav、section、article、aside、footer等使用及兼容》](https://blog.csdn.net/nongweiyilady/article/details/53885433) | [《HTML \<main\> 标签》](https://www.w3school.com.cn/tags/tag_main.asp) | [《HTML5 \<nav\>》](http://know.webhek.com/html5/html5-nav.html)
+
+### 7、用到的插件、工具库
+
+（1）
 
 <br>
 
@@ -173,6 +180,7 @@ cms_lango\src\main\webapp\lango19
 
 # 校招网静态资源（如js、css、icon）存放路径
 cms_lango\src\main\webapp\lango\describe\lango19
+cms_lango\src\main\webapp\template\lango\describe
 
 # 图片资源单独存放路径
 D:\upload\jfinal_cms\lango19
@@ -237,6 +245,165 @@ gulp.task('js', () => {
 
 * 使用 [jquery.i18n.js](https://github.com/T-baby/jquery.i18n/blob/master/README-CN.md)
 
+### 7、利用 gulp 实现监听单文件（html、js、css、images）变化后自动压缩
+
+依赖：
+
+```
+npm install --save-dev gulp-changed
+
+npm install --save-dev gulp-imagemin
+
+npm install --save-dev gulp-html-replace
+
+npm install --save-dev gulp-minify-html
+
+npm install --save-dev jshint gulp-jshint
+
+npm install --save-dev gulp-connect
+
+npm install --save-dev gulp-image-resize
+
+npm install --save-dev gulp-rename
+
+npm install --save-dev gulp-htmlmin
+```
+
+`gulpfile.js`：
+
+```
+const gulp         = require('gulp'),
+      postcss      = require('gulp-postcss'),
+      autoprefixer = require('autoprefixer'),
+      cssnano      = require('cssnano'),
+      uglify       = require('gulp-uglify'),
+      changed      = require('gulp-changed'),
+      imagemin     = require('gulp-imagemin'),
+      htmlreplace  = require('gulp-html-replace'),
+      htmlmin      = require('gulp-htmlmin'),
+      jshint       = require('gulp-jshint'),
+      connect      = require('gulp-connect'),
+      imageResize  = require('gulp-image-resize'),
+      rename       = require('gulp-rename');
+
+const cssBeforeSrc        = 'src/css/*.css',
+      cssAfterSrc         = 'build/lango19/css/',
+      jsBeforeSrc         = 'src/js/*.js',
+      jsAfterSrc          = 'build/lango19/js/',
+      imagesBeforeSrc     = 'src/images/*.+(jpeg|jpg|png)',
+      imagesAfterSrc      = 'build/lango19/images/',
+      imagesThumbAfterSrc = 'build/lango19/images/thumb/',
+      htmlBeforeSrc       = 'src/html/*.html',
+      htmlAfterSrc        = 'build/';
+
+gulp.task('html', () => {
+  return gulp.src(htmlBeforeSrc)
+             .pipe(changed(htmlAfterSrc))
+             .pipe(htmlreplace({
+                 version: { // <link href="lango19/public/css/bootstrap.min.css?<!--build:version--><!--endbuild-->" rel="stylesheet" type="text/css" />
+                   src: null, 
+                   tpl: Date.now() + ''
+                 }
+             }))
+             .pipe(htmlmin({
+               removeComments: true,
+               collapseWhitespace: true,
+               removeEmptyAttributes: true,
+               minifyJS: true,
+               minifyCSS: true,
+               ignoreCustomFragments: [/<!--\[if.+\]>/,/<!\[endif\]-->/]
+             }))
+             .pipe(gulp.dest(htmlAfterSrc))
+})
+
+gulp.task('js', () => {
+  return gulp.src([jsBeforeSrc])
+             .pipe(changed(jsAfterSrc))
+             .pipe(jshint())
+             .pipe(uglify())
+             .pipe(gulp.dest(jsAfterSrc))
+})
+
+gulp.task('css', () => {
+  const plugins = [
+        autoprefixer({browsers: ['last 4 version', '> 1%', 'not ie < 8', 'ios >= 7.0', 'android >= 4.0']}),
+        cssnano()
+    ];
+
+  return gulp.src(cssBeforeSrc)
+             .pipe(changed(cssAfterSrc))
+             .pipe(postcss(plugins))
+             .pipe(gulp.dest(cssAfterSrc))
+})
+
+gulp.task('images', () => {
+  return gulp.src(imagesBeforeSrc)
+             .pipe(changed(imagesAfterSrc))
+             .pipe(imagemin({
+                 progressive: true
+             }))
+             .pipe(gulp.dest(imagesAfterSrc))
+})
+
+gulp.task('image-resize', () => {
+  return gulp.src(imagesBeforeSrc)
+             .pipe(changed(imagesThumbAfterSrc))
+             .pipe(imageResize({
+                 width: 100,
+                 quality: .5,
+                 cover: true
+             }))
+             .pipe(rename((path) => { path.basename += '_thumb' }))
+             .pipe(gulp.dest(imagesThumbAfterSrc))
+})
+
+gulp.task('watchs', () => {
+  gulp.watch(htmlBeforeSrc, gulp.series('html'))
+  gulp.watch(jsBeforeSrc, gulp.series('js'))
+  gulp.watch(cssBeforeSrc, gulp.series('css'))
+  gulp.watch(imagesBeforeSrc, gulp.series(gulp.parallel('images', 'image-resize')))
+})
+
+gulp.task('connect', () => {
+    connect.server({
+        ip: '127.0.0.1',
+        livereload: true,
+        port: 8126
+    })
+})
+
+gulp.task('default', gulp.series(gulp.parallel('html', 'js', 'css', 'images', 'image-resize', 'watchs', 'connect')))
+
+```
+
+* 全局安装 live-server `npm i live-server -g` 运行服务 `live-server --port=8126`
+
+* 注意 Gulp3 和 Gulp4 语法的区别，更多参考：[《走进gulp4的世界》](https://www.jianshu.com/p/00983f69b0f5) | [《做一个合格的前端，gulp自动化构建工具入门教程》](https://blog.51cto.com/11640228/2062940) | [《Windows系统安装及初步使用ImageMagick》](https://blog.csdn.net/qq_37674858/article/details/80361860) | [《玩转 live-server -- 热加载利器》](https://blog.csdn.net/zhengzhuang95/article/details/81216125) | [《nodejs利用GraphicsMagick进行图形处理》](https://www.jianshu.com/p/1d656c52b788) | [《gulp-image-resize, 根据imagemagick调整图像大小很容易》](https://www.helplib.com/GitHub/article_98855) | [《Gulp-useref IE条件语句导致页面build:js不能替换的解决办法》](https://blog.csdn.net/weixin_34056162/article/details/91749529) | [《gulp-connect 实现页面自动刷新》](https://www.jianshu.com/p/f3dee1002b79)
+
+### 8、当用户使用不支持的浏览器浏览时出现提示
+
+IE8判断：
+
+```
+var g_supportIEVersion = 8.0; // 兼容的最低IE版本
+var g_ua = navigator.userAgent.toLowerCase(); // 获取浏览器信息
+var g_isIE = g_ua.indexOf('msie') > -1; // 判断是否为IE浏览器
+
+if(g_isIE && g_ua.match(/msie ([\d.]+)/) && g_ua.match(/msie ([\d.]+)/)[1]<g_supportIEVersion){  
+  alert('系统检测到您正在使用ie8以下内核的浏览器，不能实现完美体验，请更换或升级浏览器访问！');
+}
+```
+
+禁用JS提示：
+
+```
+<noscript>
+  <p class="noscript">网站的正常使用需要Javascript，请开启浏览器的Javascript脚本支持</p>
+</noscript>
+```
+
+
+* 复习：[《条件注释判断浏览器版本<!--[if lt IE 9]>》](https://www.cnblogs.com/lmsblogs/p/5854949.html)
 
 <br>
 <br>
