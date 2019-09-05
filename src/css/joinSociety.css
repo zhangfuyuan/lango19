@@ -1,0 +1,218 @@
+/* 社会招聘 */
+.join-society {
+  padding-top: 110px;
+  margin-bottom: 0;
+}
+
+.join-society h3,
+.join-society p {
+  line-height: 22px;
+}
+
+.js-cont-wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.js-type,
+.js-job {
+  width: 100%;
+}
+
+.js-type {
+  margin-bottom: 30px;
+}
+
+.js-type li {
+  width: 100%;
+  flex: 1;
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 58px;
+  color: #1B2E45;
+  border: 1px solid #1B2E45;
+  text-align: center;
+}
+
+.js-type li.active {
+  background: #1B2E45;
+  color: #fff;
+}
+
+.js-type li.active:after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #1B2E45;
+}
+
+.js-job {
+  flex-wrap: wrap;
+}
+
+.js-job li {
+  margin: 0 2% 40px 0;
+  width: 32%;
+  background: #fff;
+  color: #333;
+  border: 1px solid #DDD;
+}
+
+.js-job li:nth-of-type(3n+0) {
+  margin-right: 0;
+}
+
+.job-title {
+  text-align: center;
+  background: #F8F8F8;
+  border-bottom: 1px solid #DDD;
+  font-size: 20px;
+  line-height: 60px;
+  font-weight: bold;
+}
+
+.job-box {
+  padding: 20px 16px 0 20px;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+}
+
+.job-workplace,
+.job-li {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.job-workplace {
+  margin-bottom: 20px;
+}
+
+.job-workplace-cont {
+  font-size: 15px;
+}
+
+.job-li-cont {
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  font-size: 14px;
+}
+
+.see-more {
+  margin: 30px 0;
+  padding: 10px 40px;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #1B2E45;
+  cursor: pointer;
+  color: #333;
+}
+
+/* 弹窗 */
+.popup {
+  width: 800px;
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  box-shadow: 0px 0px 20px 0px #DDD;
+  border: 1px solid #979797;
+  background: #fff;
+  transition: all .4s cubic-bezier(.4, 0, 0, 1);
+	opacity: 1;
+}
+
+.popup.hide-popup {
+	z-index: -1;
+	opacity: 0;
+}
+
+.popup-wrap {
+  padding: 40px;
+  color: #333;
+}
+
+.popup-close {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  font-size: 15px;
+  color: #AAA;
+  cursor: pointer;
+}
+
+.popup-title,
+.popup-workplace,
+.popup-duty-cont {
+  margin-bottom: 28px;
+}
+
+.popup-title {
+  padding-top: 15px;
+  position: relative;
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: bold;
+  color: #1B2E45;
+}
+
+.popup-title:before {
+  content: '';
+  width: 40px;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #1B2E45;
+}
+
+.popup-workplace,
+.popup-li,
+.popup-duty {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.popup-li-cont,
+.popup-duty-cont {
+  font-size: 14px;
+}
+
+/* 响应式 */
+@media (max-width: 1280px) {}
+
+@media (max-width: 1024px) {
+  .join-society {
+    padding-top: 84px;
+    margin-bottom: 0;
+  }
+
+  .js-type li {
+    font-size: 18px;
+    line-height: 48px;
+  }
+
+  .js-job li {
+    margin: 0 0 20px !important;
+    width: 100%;
+  }
+
+  .popup {
+    width: 100%;
+    position: absolute;
+    transform: translate(0, 0);
+    left: 0;
+  }
+}

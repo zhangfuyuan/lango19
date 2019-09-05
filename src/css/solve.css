@@ -1,0 +1,141 @@
+/* 解决方案 */
+.solve {
+	padding-top: 110px;
+}
+
+.solve p {
+  line-height: 22px;
+}
+
+.solve-p1, .solve-p2 {
+	margin-bottom: 40px;
+}
+
+.solve-p1-wrap, .solve-p2-wrap, .solve-p3-wrap {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.solve-p1-imgthumb, .solve-p2-imgthumb, .solve-p3-imgthumb, .solve-p1-img, .solve-p2-img, .solve-p3-img {
+	width: 600px;
+	height: 340px;
+}
+
+.solve-p1-imgbox, .solve-p2-imgbox, .solve-p3-imgbox {
+	position: relative;
+}
+
+.solve-p1-img, .solve-p2-img, .solve-p3-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.solve-p1-cont, .solve-p2-cont, .solve-p3-cont {
+	max-width: 600px;
+}
+
+.solve-p1-cont h2, .solve-p2-cont h2, .solve-p3-cont h2 {
+	padding: 15px 0 42px;
+	position: relative;
+	font-size: 24px;
+	color: #1B2E45;
+	font-weight: bold;
+}
+
+.solve-p1-cont h2:before, .solve-p2-cont h2:before, .solve-p3-cont h2:before {
+	content: '';
+	width: 40px;
+	height: 5px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #1B2E45;
+}
+
+.solve-p1-cont p, .solve-p2-cont p, .solve-p3-cont p {
+	font-size: 14px;
+	color: #333;
+}
+
+.see-more {
+	margin-top: 50px;
+	padding: 10px 40px;
+	display: inline-block;
+	background: #fff;
+	border: 1px solid #1B2E45;
+	cursor: pointer;
+	color: #333;
+}
+
+.mt20 {
+	margin-top: 20px;
+}
+
+/* 广告电视 */
+.solve-p1 {
+	background: #fff;
+}
+
+.solve-p1-cont {
+	padding-left: 20px;
+}
+
+/* 酒店电视 */
+.solve-p2 {
+	background: #f8f8f8;
+}
+
+.solve-p2-wrap {
+	padding: 40px 0;
+}
+
+.solve-p2-cont {
+	padding-right: 20px;
+}
+
+/* K歌电视 */
+.solve-p3 {
+	background: #fff;
+}
+
+.solve-p3-cont {
+	padding-left: 20px;
+}
+
+/* 响应式 */
+@media (max-width: 1280px) {
+  
+}
+
+@media (max-width: 1024px) {
+	.solve {
+		padding-top: 84px;
+	}
+	
+	.solve-p1, .solve-p2 {
+		margin-bottom: 20px;
+	}
+	
+	.solve-p1-wrap, .solve-p2-wrap, .solve-p3-wrap {
+		display: block;
+	}
+	
+	.solve-p1-imgthumb, .solve-p2-imgthumb, .solve-p3-imgthumb, .solve-p1-img, .solve-p2-img, .solve-p3-img {
+		width: 100%;
+		height: auto;
+	}
+	
+	.solve-p1-cont, .solve-p2-cont, .solve-p3-cont {
+		padding: 0 20px;
+		max-width: 1024px;
+	}
+	
+	.solve-p2-wrap {
+		padding: 20px 0;
+	}
+	
+	.see-more {
+		margin: 25px 0;
+	}
+}

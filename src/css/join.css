@@ -1,0 +1,129 @@
+/* 加入我们 */
+.join p {
+  line-height: 22px;
+}
+
+.join-banner {
+	margin-bottom: 40px;
+}
+
+.join-cont-imgboxs, .join-p {
+	margin: 0 auto 60px;
+	max-width: 1200px;
+}
+
+.join-cont-imgthumb, .join-cont-img {
+	width: 590px;
+	height: 300px;
+}
+
+/* 大型轮播图 */
+.join-banner {
+  position: relative;
+	height: 600px;
+}
+
+.join-banner-bg, .join-cont-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	background-position-y: top;
+	background-size: cover;
+}
+
+/* 招聘分类图 */
+.join-cont-imgbox {
+	flex: 1;
+	display: block;
+	width: 100%;
+	height: 300px;
+	position: relative;
+	cursor: pointer;
+}
+
+.join-cont-imgbox:first-child {
+	margin-right: 20px;
+}
+
+.join-cont-h1 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 68px;
+	color: #fff;
+	white-space: nowrap;
+}
+
+/* 薪资待遇、薪资结构等 */
+.join-p:last-of-type {
+	margin-bottom: 0;
+}
+
+.join-p h2 {
+	margin-bottom: 10px;
+	padding-left: 15px;
+	position: relative;
+	font-size: 24px;
+	line-height: 40px;
+	color: #1B2E45;
+	font-weight: bold;
+}
+
+.join-p h2:before {
+	content: '';
+	width: 5px;
+	height: 40px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: #1B2E45;
+}
+
+.join-p-cont * {
+	padding: 0;
+	margin: 0;
+	line-height: 22px !important;
+	color: #333 !important;
+	font-size: 14px !important;
+}
+
+/* 响应式 */
+@media (max-width: 1280px) {
+  
+}
+
+@media (max-width: 1024px) {
+	.join-banner {
+		height: 300px;
+	}
+	
+	.join-banner {
+		margin-bottom: 20px;
+	}
+	
+	.join-cont {
+		padding: 0 20px;
+	}
+	
+	.join-cont-imgboxs, .join-p {
+		margin-bottom: 30px;
+	}
+	
+	.join-cont-imgbox {
+		width: 47.5%;
+		height: 100px;
+	}
+	
+	.join-cont-h1  {
+		font-size: 20px;
+	}
+	
+	.join-p:last-of-type {
+		margin-bottom: 20px;
+	}
+}
