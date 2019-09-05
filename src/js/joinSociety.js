@@ -170,4 +170,9 @@ $.extend(true, window.Page || (window.Page = {}), {
 
 /********************************************* 以上声明，以下调用 *********************************************/
 
+// css hack 360安全浏览器
+if ($('#testLi').width() > 382) {
+	$(document.body).append('<style type="text/css">.js-job li {margin-right: 1.7%;}</style>');
+}
+
 Page.initMain();
