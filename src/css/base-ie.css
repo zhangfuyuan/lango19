@@ -97,6 +97,11 @@ footer {
   vertical-align: middle;
 }
 
+.jc-process-icon {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
 .job-btns {
   padding: 0 20px;
 }

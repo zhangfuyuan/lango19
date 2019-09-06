@@ -33,14 +33,29 @@
   padding: 40px 0 20px;
 }
 
+.home-p1-imgbox,
+.home-p2-imgbox,
+.home-p3-imgbox {
+	width: 500px;
+	position: relative;
+}
+
+.home-p1-img,
+.home-p2-img,
+.home-p3-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .home-p1-imgthumb,
 .home-p2-imgthumb,
 .home-p3-imgthumb,
 .home-p1-img,
 .home-p2-img,
 .home-p3-img {
-  width: 500px;
-  height: 600px;
+  width: 100%;
+  height: auto;
 }
 
 /* 大型轮播图 */
@@ -57,7 +72,7 @@
   height: 100%;
   background-repeat: no-repeat;
   background-position-x: center;
-  background-position-y: top;
+  background-position-y: center;
   background-size: cover;
 }
 
@@ -75,16 +90,6 @@
 /* 公司简介 */
 .home-p1 {
   background: #fff;
-}
-
-.home-p1-imgbox {
-  position: relative;
-}
-
-.home-p1-img {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .home-p1-cont {
@@ -129,16 +134,6 @@
   padding: 40px 0;
 }
 
-.home-p2-imgbox {
-  position: relative;
-}
-
-.home-p2-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .home-p2-cont {
   padding-right: 20px;
 }
@@ -175,16 +170,6 @@
 /* 经营理念 */
 .home-p3 {
   background: #fff;
-}
-
-.home-p3-imgbox {
-  position: relative;
-}
-
-.home-p3-img {
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .home-p3-cont {

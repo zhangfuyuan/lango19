@@ -1,6 +1,6 @@
 /* 公共样式 */
 body {
-  background: #EEE;
+  background: #fff;
   -webkit-font-smoothing: auto;
   font: 14px "Microsoft YaHei UI", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", sans-serif;
 }
@@ -263,7 +263,7 @@ p {
 
   .header-nav {
     padding: 20px;
-    background-color: #EEE;
+    background-color: #fff;
     position: fixed;
     width: 100%;
     height: 100%;
