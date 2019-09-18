@@ -136,7 +136,7 @@ p {
   transform: translateX(-50%);
   width: 60%;
   height: 3px;
-  background: #1B2E45;
+  background: #D61918;
 }
 
 .header-menu-page:first-child {
@@ -165,7 +165,6 @@ p {
 
 /* 页中正文 */
 .main {
-  margin-bottom: 40px;
   padding-top: 69px;
   width: 100%;
   min-height: 100vh;
@@ -191,18 +190,33 @@ p {
 /* 页脚信息 */
 .footer {
   width: 100%;
-  /* position: fixed; */
-  /* bottom: 0; */
-  /* left: 0; */
-  /* z-index: 9; */
   overflow: hidden;
   background: #F8F8F8;
 }
 
+.footer-contact,
 .footer-copyright {
   margin: 0 auto;
   max-width: 1200px;
-  height: 100%;
+}
+
+.footer-contact {
+  padding: 0 118px;
+  height: 100px;
+}
+
+.footer-contact h3,
+.footer-contact p {
+  font-size: 14px;
+  color: #333;
+  line-height: 22px;
+}
+
+.footer-contact h3 {
+  font-weight: bold;
+}
+
+.footer-copyright {
   line-height: 40px;
   text-align: center;
 }
@@ -302,11 +316,10 @@ p {
   }
 
   .header-menu-page.active .header-menu-link {
-    border-bottom: 3px solid #1B2E45;
+    border-bottom: 3px solid #D61918;
   }
 
   .main {
-    margin-bottom: 20px;
     padding-top: 64px;
   }
 
@@ -315,9 +328,21 @@ p {
     right: 15px;
   }
 
-  /* 	.footer {
-    position: static;
-  } */
+  .footer-contact,
+  .footer-copyright {
+    max-width: 1024px;
+  }
+
+  .footer-contact {
+    display: block;
+    padding: 20px 10px 10px;
+    height: auto;
+    text-align: center;
+  }
+
+  .footer-contact>div:first-child {
+    margin-bottom: 20px;
+  }
 
   .footer-copyright a:first-child {
     display: block;

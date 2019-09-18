@@ -3,10 +3,10 @@
  * */
 
 window.Page = {
-	// 滚动延时器
+  // 滚动延时器
   scrollTimer: null,
-	
-	// 页头、页脚初始化
+
+  // 页头、页脚初始化
   init: function() {
     $.getJSON('lango19/data/common.json?' + Date.now(), function(response) {
       var _json = response['common'];
@@ -23,7 +23,7 @@ window.Page = {
       var _headerItem = null;
 
       for (var _hIndex = 0; _hIndex < 6; _hIndex++) {
-				// 0 ~ 5 为页头内容
+        // 0 ~ 5 为页头内容
         _headerItem = _data[_hIndex];
 
         $('#header_' + _hIndex).html(_headerItem['content'])
@@ -33,12 +33,23 @@ window.Page = {
         $('#logo').parent('.header-logo').attr('href', _indexHrefList[_hrefIndex]);
       }
 
+      // 初始化联系信息
+      var _contactItem = null;
+
+      for (var _cIndex = 0; _cIndex < 2; _cIndex++) {
+        // 6 ~ 7 为联系信息
+        _contactItem = _data[6 + _cIndex];
+
+        $('#contact_title_' + _cIndex).html(_contactItem['title']);
+        $('#contact_cont_' + _cIndex).html(_contactItem['content']);
+      }
+
       // 初始化页脚
       var _footerItem = null;
 
       for (var _fIndex = 0; _fIndex < 3; _fIndex++) {
-				// 6 ~ 8 为页脚内容
-        _footerItem = _data[6 + _fIndex];
+        // 8 ~ 10 为页脚内容
+        _footerItem = _data[8 + _fIndex];
 
         $('#footer_' + _fIndex).html(_footerItem['content'])
           .attr('href', _footerItem['url'] || _indexHrefList[_hrefIndex]);
