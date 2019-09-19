@@ -167,7 +167,6 @@ p {
 .main {
   padding-top: 69px;
   width: 100%;
-  min-height: 100vh;
   overflow: hidden;
 }
 

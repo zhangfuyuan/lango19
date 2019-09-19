@@ -1,46 +1,47 @@
 /* 新闻中心详情 */
-.news-details {
-	padding-top: 110px;
-}
-
 .nd-box-wrap {
-	margin: 0 auto;
-	max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+  max-width: 1200px;
 }
 
 #banner {
-	width: 1200px;
-	height: 680px;
+  width: 1200px;
+  height: 680px;
 }
 
 #content {
-	padding: 16px 0;
+  min-height: 300px;
 }
 
-#content * {
-	padding: 0;
-	margin: 0;
-	line-height: 22px !important;
-	color: #333 !important;
-	font-size: 14px !important;
+#content p {
+  text-indent: 0 !important;
+  background: #fff !important;
+}
+
+#content span {
+  font-family: "Microsoft YaHei UI", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", sans-serif !important;
+}
+
+#content img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+#content img+span {
+  display: none;
 }
 
 /* 响应式 */
-@media (max-width: 1280px) {
-  
-}
+@media (max-width: 1280px) {}
 
 @media (max-width: 1024px) {
-	.news-details {
-		padding-top: 84px;
-	}
-	
-	#banner {
-		width: 100%;
-		height: auto;
-	}
-	
-	#content {
-		padding: 16px 20px;
-	}
+  #banner {
+    width: 100%;
+    height: auto;
+  }
+
+  .nd-box-wrap {
+    padding: 20px 10px;
+  }
 }

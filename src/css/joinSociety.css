@@ -36,7 +36,8 @@
 }
 
 .js-type li.active {
-  background: #1B2E45;
+  background: #D61918;
+  border: 1px solid #D61918;
   color: #fff;
 }
 
@@ -50,7 +51,7 @@
   bottom: -10px;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #1B2E45;
+  border-top: 10px solid #D61918;
 }
 
 .js-job {
@@ -106,17 +107,27 @@
   font-size: 14px;
 }
 
-.see-more {
+.job-btns {
   margin: 30px 0;
-  padding: 10px 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.see-more,
+.submit-resume {
   display: inline-block;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  width: 41.6%;
+  line-height: 38px;
   background: #fff;
+  color: #333;
   border: 1px solid #1B2E45;
   cursor: pointer;
-  color: #333;
+  text-align: center;
+}
+
+.submit-resume {
+  margin-right: 20px;
+  margin-right: 5.2%;
 }
 
 /* 弹窗 */
@@ -127,16 +138,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 8;
-  box-shadow: 0px 0px 20px 0px #DDD;
+  box-shadow: 0px 0px 20px #DDD;
   border: 1px solid #979797;
   background: #fff;
   transition: all .4s cubic-bezier(.4, 0, 0, 1);
-	opacity: 1;
+  opacity: 1;
 }
 
 .popup.hide-popup {
-	z-index: -1;
-	opacity: 0;
+  z-index: -1;
+  opacity: 0;
 }
 
 .popup-wrap {

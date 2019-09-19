@@ -85,8 +85,11 @@ $.extend(true, window.Page || (window.Page = {}), {
               __jobLi +
               '  </p>' +
               '</div>' +
-              '<a class="see-more" href="javascript:void(0);" onclick="Page.showPopup(' + __jobId + ', ' + __jobPid +
+              '<div class="job-btns flex-hc-vc">' +
+              '	 <a class="submit-resume" href="javascript:void(0);" onclick="Page.showPopup()">投递简历</a>' +
+              '  <a class="see-more" href="javascript:void(0);" onclick="Page.showPopup(' + __jobId + ', ' + __jobPid +
               ')">查看更多>></a>' +
+              '</div>' +
               '</li>';
           }
 
@@ -120,8 +123,11 @@ $.extend(true, window.Page || (window.Page = {}), {
         item.jobLi +
         '  </p>' +
         '</div>' +
-        '<a class="see-more" href="javascript:void(0);" onclick="Page.showPopup(' + item.jobId + ', ' + item.jobPid +
+        '<div class="job-btns flex-hc-vc">' +
+        '	 <a class="submit-resume" href="javascript:void(0);" onclick="Page.showPopup()">投递简历</a>' +
+        '  <a class="see-more" href="javascript:void(0);" onclick="Page.showPopup(' + item.jobId + ', ' + item.jobPid +
         ')">查看更多>></a>' +
+        '</div>' +
         '</li>';
     });
     $('#typeBox').find('li').removeClass('active').eq(index).addClass('active');
@@ -130,17 +136,22 @@ $.extend(true, window.Page || (window.Page = {}), {
 
   // 查看岗位详细弹窗
   showPopup: function(id, pid) {
-    var _job = this.jobMap[pid].jobs[id];
-    var _html = '<h2 class="popup-title">' + _job.jobTitle + '</h2>' +
-      '<h3 class="popup-workplace">工作地点：<span class="popup-workplace-cont">' + _job.jobWorkplace + '</span></h3>' +
-      '<h3 class="popup-duty">岗位职责：</h3>' +
-      '<p class="popup-duty-cont">' +
-      _job.jobDuty +
-      '</p>' +
-      '<h3 class="popup-li">任职要求：</h3>' +
-      '<p class="popup-li-cont">' +
-      _job.jobLi +
-      '</p>';
+    if (typeof id != 'undefined' && typeof pid != 'undefined') {
+      var _job = this.jobMap[pid].jobs[id];
+      var _html = '<h2 class="popup-title">' + _job.jobTitle + '</h2>' +
+        '<h3 class="popup-workplace">工作地点：<span class="popup-workplace-cont">' + _job.jobWorkplace + '</span></h3>' +
+        '<h3 class="popup-duty">岗位职责：</h3>' +
+        '<p class="popup-duty-cont">' +
+        _job.jobDuty +
+        '</p>' +
+        '<h3 class="popup-li">任职要求：</h3>' +
+        '<p class="popup-li-cont">' +
+        _job.jobLi +
+        '</p>';
+    } else {
+      var _html =
+        '<p>请把附件简历发送此邮箱</p><p style="padding: 10px 0;cursor: pointer;" onclick="Page.copyHandle($(\'#email\').get(0))">人事邮箱：<span id="email" style="text-decoration: underline;color: #23527c;">lhr@lango-tech.com</span></p><p>人事电话：18988972210（宋女士）</p>';
+    }
 
     if (this.hidePopupTimer) {
       clearTimeout(this.hidePopupTimer);
@@ -165,6 +176,16 @@ $.extend(true, window.Page || (window.Page = {}), {
       clearTimeout(_self.hidePopupTimer);
       _self.hidePopupTimer = null;
     }, 500)
+  },
+
+  // 自动复制
+  copyHandle: function(node) {
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    var selection = document.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('Copy');
   }
 });
 
@@ -172,7 +193,7 @@ $.extend(true, window.Page || (window.Page = {}), {
 
 // css hack 360安全浏览器
 if ($('#testLi').width() > 382) {
-	$(document.body).append('<style type="text/css">.js-job li {margin-right: 1.7%;}</style>');
+  $(document.body).append('<style type="text/css">.js-job li {margin-right: 1.7%;}</style>');
 }
 
 Page.initMain();

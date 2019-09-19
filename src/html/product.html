@@ -18,12 +18,12 @@
     <link href="lango19/css/ie10-viewport-bug-workaround.css?<!--build:version--><!--endbuild-->" rel="stylesheet" type="text/css" />
     <link href="lango19/css/base.css?<!--build:version--><!--endbuild-->" rel="stylesheet" type="text/css" />
     <link href="lango19/css/product.css?<!--build:version--><!--endbuild-->" rel="stylesheet" type="text/css" />
- 
+
     <!--[if lte IE 9]>
       <link href="lango19/css/base-ie.css?<!--build:version--><!--endbuild-->" rel="stylesheet" type="text/css" />
       <script src="lango19/lib/js/html5shiv.min.js?<!--build:version--><!--endbuild-->" type="text/javascript"></script>
       <script src="lango19/lib/js/respond.min.js?<!--build:version--><!--endbuild-->" type="text/javascript"></script>
-      <script src="lango19/lib/js/IE9.js?<!--build:version--><!--endbuild-->" type="text/javascript">IE7_PNG_SUFFIX=".png";</script>
+      <script src="lango19/lib/js/IE9.js?<!--build:version--><!--endbuild-->" type="text/javascript">IE7_PNG_SUFFIX = ".png";</script>
     <![endif]--><!---->
   </head>
   <body ontouchstart="" οnmοuseοver="">
@@ -64,53 +64,180 @@
             </li>
           </ul>
         </nav>
-				
-				<!-- 登录注册入口 -->
-				<a class="header-entry" href="####">English</a>
-				
-				<!-- 移动端更多菜单按钮 -->
-				<span class="header-m-menu glyphicon glyphicon-menu-hamburger" aria-hidden="true" onclick="$('#header').addClass('m-show-nav');"></span>
-				
-				<!-- 移动端关闭菜单按钮 -->
-				<span class="header-m-close glyphicon glyphicon-remove" aria-hidden="true" onclick="$('#header').removeClass('m-show-nav')"></span>
+        
+        <!-- 登录注册入口 -->
+        <a class="header-entry" href="####">English</a>
+        
+        <!-- 移动端更多菜单按钮 -->
+        <span class="header-m-menu glyphicon glyphicon-menu-hamburger" aria-hidden="true" onclick="$('#header').addClass('m-show-nav');"></span>
+        
+        <!-- 移动端关闭菜单按钮 -->
+        <span class="header-m-close glyphicon glyphicon-remove" aria-hidden="true" onclick="$('#header').removeClass('m-show-nav')"></span>
       </div>
     </header>
     
     <!---------------------------------------------------------- 华丽的分割线 ---------------------------------------------------------->
     
     <!-- 页中正文 -->
-    <main class="main home">
+    <main class="main product">
       <!-- 禁用脚本提示 -->
       <noscript class="noscript">
         <p class="alert alert-danger" role="alert">网站的正常使用需要Javascript，请开启浏览器的Javascript脚本支持</p>
       </noscript>
-			
+      
+      <div class="product-wrap flex-hb">
+        <!-- 左侧产品列表 -->
+        <nav class="product-type-left">
+          <h2>所有产品</h2>
+          
+          <dl>
+            <dt>智慧商显</dt>
+            <dd class="dd" data-index="0">一体机+管理系统 <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></dd>
+            <dd class="dd" data-index="1">广告机+信发系统 <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></dd>
+            <dd class="dd" data-index="2">跑步机+管理系统 <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span></dd>
+          </dl>
+          
+          <dl>
+            <dt>液晶显示</dt>
+            <dd class="dd" data-index="3">三合一 <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></dd>
+            <dd class="dd" data-index="4">ATV <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></dd>
+            <dd class="dd" data-index="5">DTV <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></dd>
+            <dd class="dd" data-index="6">Smart TV <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></dd>
+          </dl>
+        </nav>
+        
+        <!-- 右侧初始产品列表 -->
+        <ul class="product-type-right flex-h">
+          <li class="li flex-h" data-index="0">
+            <img src="//lango-tech.com/XBH/images/20160812_114044_462192.png" alt="一体机+管理系统" />
+            
+            <div>
+              <h3>一体机+管理系统</h3>
+              <p>多功能液晶交互平板</p>
+            </div>
+          </li>
+          
+          <li class="li flex-h" data-index="1">
+            <img src="//lango-tech.com/XBH/images/20160813_094524_960283.png" alt="广告机+信发系统" />
+            
+            <div>
+              <h3>广告机+信发系统</h3>
+              <p>集娱乐、交互、信息推送于一体</p>
+            </div>
+          </li>
+          
+          <li class="li flex-h" data-index="2">
+            <img src="//lango-tech.com/XBH/images/20160831_143833_463641.png" alt="跑步机+管理系统" />
+            
+            <div>
+              <h3>跑步机+管理系统</h3>
+              <p>智能控制+健康数据智能管理</p>
+            </div>
+          </li>
+            
+          <li class="li flex-h" data-index="3">
+            <img src="//lango-tech.com/XBH/images/20160905_143939_109893.png" alt="三合一" />
+            
+            <div>
+              <h3>三合一</h3>
+              <p>适用于中国及海外模拟电视区域的智能电视机主板</p>
+            </div>
+          </li>
+          
+          <li class="li flex-h" data-index="4">
+            <img src="//lango-tech.com/XBH/images/20160905_143951_109934.png" alt="ATV" />
+            
+            <div>
+              <h3>ATV</h3>
+              <p>模拟电视控制主板  集成电源及恒流驱动</p>
+            </div>
+          </li>
+            
+          <li class="li flex-h" data-index="5">
+            <img src="//lango-tech.com/XBH/images/20160905_144002_775392.png" alt="DTV" />
+            
+            <div>
+              <h3>DTV</h3>
+              <p>数模一体电视控制主板</p>
+            </div>
+          </li>
+          
+          <li class="li flex-h" data-index="6">
+            <img src="//lango-tech.com/XBH/images/20160905_144011_163121.png" alt="Smart TV" />
+            
+            <div>
+              <h3>Smart TV</h3>
+              <p>适用于中国及海外模拟电视区域的智能电视机主板</p>
+            </div>
+          </li>
+        </ul>
+        
+        <!-- 右侧产品详情 -->
+        <div class="product-contbox hidden">
+          <h2>产品详细</h2>
+          
+          <div class="product-contbox-wrap">
+            <div class="product-show flex-h">
+              <div class="product-preview">
+                <img id="product_preview" src="//lango-tech.com/XBH/images/20160730_141632_496680.png" alt="一体机+管理系统" />
+              </div>
+              
+              <div class="product-cont">
+                <h3 id="product_cont_name" class="product-cont-name">一体机+管理系统</h3>
+                
+                <p id="product_cont_content" class="product-cont-content">小百合教学一体机搭载Windows和Android双系统，整合了电脑系统、教学软件、电子白板、影视资源四大 功能，让一台触摸一体机同时成为电脑、投影、白板、电视，真正实现一机多用。</p>
+                
+                <p id="product_cont_sub" class="product-cont-sub">多功能液晶交互平板</p>
+                
+                <div id="product_cont_imgbox" class="product-cont-imgbox">
+                  <img id="product_cont_img_0" src="//lango-tech.com/XBH/images/20160730_141632_496680.png" alt="一体机+管理系统" />
+                  <img id="product_cont_img_1" src="//lango-tech.com/XBH/images/20160730_141710_968028.png" alt="一体机+管理系统" />
+                  <img id="product_cont_img_2" src="//lango-tech.com/XBH/images/20160730_141159_71180.png" alt="一体机+管理系统" />
+                </div>
+              </div>
+            </div>
+              
+            <ul id="product_items" class="product-items flex-h">
+              <li class="product-item active" onclick="Page.switchItem(0);">智能教育一体机</li>
+              <li class="product-item" onclick="Page.switchItem(1);">远程会议一体机</li>
+              <li class="product-item" onclick="Page.switchItem(2);">单机板</li>
+              <li class="product-item" onclick="Page.switchItem(3);">中端智能双系统</li>
+              <li class="product-item" onclick="Page.switchItem(4);">高端智能双系统</li>
+              <li class="product-item" onclick="Page.switchItem(5);">高配安卓系统</li>
+            </ul>
+            
+            <div id="product_details" class="product-details">
+              <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; color: rgb(0, 176, 240); font-size: 24px;"><strong>智能教育一体机</strong><br></span></p><p style="margin-left:28px"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><span style="font-family: Wingdings; font-weight: bold; font-size: 14px;">l&nbsp;</span><strong><span style="font-family: 'Times New Roman'; font-size: 14px;">产品概述：</span></strong></span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">小百合教学一体机搭载Windows和Android双系统，整合了电脑系统、教学软件、电子白板、影视资源四大功能，让一台触摸一体机同时成为电脑、投影、白板、电视，真正实现一机多用。小百合教学一体机内置的锁屏软件可一键锁住屏幕，防止学生在课间随意操作。其内置的电子白板软件，方便老师上课进行课件、习题讲解，节省了粉笔、粉笔擦、投影仪、电脑等成本，推动智慧校园的建设。</span></span></p><p style="text-indent:28px"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">小百合教学一体机作为多功能液晶交互平板，除了应用于教学领域，还广泛于办公培训、多功能报告厅、远程培训、项目展览等场所。</span></p><p style="margin-left:28px"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><span style="font-family: Wingdings; font-weight: bold; font-size: 14px;">l&nbsp;</span><strong><span style="font-family: 'Times New Roman'; font-size: 14px;">应用领域：</span></strong></span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp; 教育领域：幼儿教育、中小学教学、大学教学、职业教育</span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp; 办公领域：商务培训、产品宣传、部门会议、项目展览、企业培训、发布信息</span></p><p style="margin-left:28px"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><span style="font-family: Wingdings; font-weight: bold; font-size: 14px;">l&nbsp;</span><strong><span style="font-family: 'Times New Roman'; font-size: 14px;">功能特点：</span></strong></span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;<span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">工业部件支持<span style="font-size: 14px;">7*24</span><span style="font-size: 14px;">不间断工作</span></span></span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;安卓和<span style="font-family: 'Times New Roman'; font-size: 14px;">Windo</span>ws双系统,自由一键灵活切换</span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;支持无线显示通道</span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;内置可以读写、批注、保存、展示文件的白板软件</span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;真红外<span style="font-family: 'Times New Roman'; font-size: 14px;">10</span><span style="font-family: 宋体; font-size: 14px;">点触摸及书写</span></span></p><p style="vertical-align: middle"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;前置多种接口多环境使用</span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp;</span></p><p><span style="color: rgb(0, 176, 240); font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 24px;"><strong>部分界面展示</strong></span></p><p style="text-align: center;"><span style=";font-family:'Times New Roman';font-size:14px"><img src="//lango-tech.com/XBH/ueditor/images/20160730/1469857761181033127.png" title="1469857761181033127.png" alt="主页.png">&nbsp;&nbsp;<img src="//lango-tech.com/XBH/ueditor/images/20160730/1469857767750000885.png" title="1469857767750000885.png" alt="设置.png"></span></p><p style="text-align: center;"><span style=";font-family:'Times New Roman';font-size:14px">&nbsp; &nbsp;&nbsp;<img src="//lango-tech.com/XBH/ueditor/images/20160803/1470211568371014838.png" title="1470211568371014838.png" alt="界面展示.png">&nbsp; &nbsp; &nbsp;<img src="//lango-tech.com/XBH/ueditor/images/20160803/1470224873181070416.png" title="1470224873181070416.png" alt="界面展示.png"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     
     <!---------------------------------------------------------- 华丽的分割线 ---------------------------------------------------------->
     
-		<!-- 滚回页顶 -->
-		<img id="toTop" class="lg-bezier" onclick="$('body, html').animate({ scrollTop: 0 }, 200);" src="lango19/images/top.jpg" alt="返回顶部" />
-		
+    <!-- 滚回页顶 -->
+    <img id="toTop" class="lg-bezier" onclick="$('body, html').animate({ scrollTop: 0 }, 200);" src="lango19/images/top.jpg" alt="返回顶部" />
+    
     <!-- 页脚信息 -->
     <footer class="footer">
-			<div class="footer-contact flex-hb-vc">
-				<div>
-					<h3 id="contact_title_0">广州总部</h3>
-					<p id="contact_cont_0">地址：广州市天河区高新技术开发区高普路136号（华天时代）北塔四层<br />电话：020-38329601</p>
-				</div>
-				
-				<div>
-					<h3 id="contact_title_1">长沙研发中心</h3>
-					<p id="contact_cont_1">地址：长沙高新开发区尖山路39号长沙中电软件园总部大楼1306-1307<br />电话：020-38329601</p>
-				</div>
-			</div>
-			
+      <div class="footer-contact flex-hb-vc">
+        <div>
+          <h3 id="contact_title_0">广州总部</h3>
+          <p id="contact_cont_0">地址：广州市天河区高新技术开发区高普路136号（华天时代）北塔四层<br />电话：020-38329601</p>
+        </div>
+        
+        <div>
+          <h3 id="contact_title_1">长沙研发中心</h3>
+          <p id="contact_cont_1">地址：长沙高新开发区尖山路39号长沙中电软件园总部大楼1306-1307<br />电话：020-38329601</p>
+        </div>
+      </div>
+      
       <div class="footer-copyright">
-				<a id="footer_0" href="javascript:void(0);">Copyright ©lango-tech.com. All Rights Reserved.</a>
-				<a id="footer_1" href="//www.beian.miit.gov.cn">粤ICP备14024048号-1</a>
-				<span>|</span>
-				<a id="footer_2" href="<!--build:indexHref--><!--endbuild-->">朗国电子科技有限公司</a>
+        <a id="footer_0" href="javascript:void(0);">Copyright ©lango-tech.com. All Rights Reserved.</a>
+        <a id="footer_1" href="//www.beian.miit.gov.cn">粤ICP备14024048号-1</a>
+        <span>|</span>
+        <a id="footer_2" href="<!--build:indexHref--><!--endbuild-->">朗国电子科技有限公司</a>
       </div>
     </footer>
 
@@ -119,5 +246,6 @@
     <script src="lango19/lib/js/jquery.min.js?<!--build:version--><!--endbuild-->" type="text/javascript"></script>
     <script src="lango19/js/ie10-viewport-bug-workaround.js?<!--build:version--><!--endbuild-->" type="text/javascript"></script>
     <script src="lango19/js/common.js?<!--build:version--><!--endbuild-->" type="text/javascript"></script>
+    <script src="lango19/js/product.js?<!--build:version--><!--endbuild-->" type="text/javascript"></script>
   </body>
 </html>

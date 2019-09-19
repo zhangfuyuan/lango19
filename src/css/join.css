@@ -3,26 +3,10 @@
   line-height: 22px;
 }
 
-.join-banner {
-  margin-bottom: 40px;
-}
-
-.join-cont-imgboxs,
-.join-p {
-  margin: 0 auto 60px;
-  max-width: 1200px;
-}
-
-.join-cont-imgthumb,
-.join-cont-img {
-  width: 590px;
-  height: 300px;
-}
-
 /* 大型轮播图 */
 .join-banner {
   position: relative;
-  height: 600px;
+  height: 700px;
 }
 
 .join-banner-bg,
@@ -38,7 +22,38 @@
   background-size: cover;
 }
 
+/* 正文 */
+.join-cont {
+  padding: 40px 0;
+}
+
+.join-1 h2,
+.join-2 h2,
+.join-3 h2 {
+  padding: 15px 0 40px;
+  position: relative;
+  font-size: 24px;
+  color: #1B2E45;
+}
+
+.join-1 h2:before,
+.join-2 h2:before,
+.join-3 h2:before {
+  content: '';
+  width: 40px;
+  height: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #D61918;
+}
+
 /* 招聘分类图 */
+.join-cont-imgboxs {
+  margin: 0 auto 40px;
+  max-width: 1200px;
+}
+
 .join-cont-imgbox {
   flex: 1;
   display: block;
@@ -73,72 +88,113 @@
   white-space: nowrap;
 }
 
-/* 薪资待遇、薪资结构等 */
-.join-p:last-of-type {
-  margin-bottom: 0;
+/* 办公环境 */
+.join-1 {
+  padding: 40px 0;
+  background: #f8f8f8;
 }
 
-.join-p h2 {
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: 0 32px;
-  display: inline-block;
+.join-1-wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.join-1-imgbox,
+.join-1-imgbox>div {
+  display: block;
+  width: 100%;
   position: relative;
-  font-size: 24px;
-  line-height: 60px;
-  color: #fff;
-  font-weight: bold;
-	background: #1B2E45;
 }
 
-.join-p h2:before {
+.join-1-imgbox {
+  margin-left: 20px;
+  flex: 1;
+}
+
+.join-1-imgbox:first-child {
+  margin-left: 0;
+}
+
+.join-1-imgbox>div:first-child {
+  margin-bottom: 20px;
+}
+
+.join-1-imgbox>img {
+  height: 600px;
+}
+
+.join-1-imgbox>div>img {
+  height: 290px;
+}
+
+/* 薪酬福利 */
+.join-2 {
+  padding: 40px 0;
+}
+
+.join-2-wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.join-p {
+  margin-bottom: 50px;
+  padding-left: 55px;
+}
+
+.join-p:last-of-type {
+  margin-bottom: 0 !important;
+}
+
+.join-p h3 {
+  margin-bottom: 16px;
+  position: relative;
+  font-size: 23px;
+  line-height: 40px;
+  color: #000;
+}
+
+.join-p h3:before {
   content: '';
-  width: 5px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  left: -10px;
+  left: -55px;
   top: 0;
   background: #1B2E45;
+  border-radius: 50%;
 }
 
-.join-p1 h2,
-.join-p1 h2:before {
-  background: linear-gradient(180deg, rgba(2, 185, 255, 1) 0%, rgba(0, 121, 255, 1) 100%);
-}
-
-.join-p2 h2,
-.join-p2 h2:before {
-  background: linear-gradient(180deg, rgba(143, 148, 251, 1) 0%, rgba(78, 84, 200, 1) 100%);
-}
-
-.join-p3 h2,
-.join-p3 h2:before {
-  background: linear-gradient(180deg, rgba(18, 216, 250, 1) 0%, rgba(31, 162, 255, 1) 100%);
-}
-
-.join-p4 h2,
-.join-p4 h2:before {
+.join-p1 h3:before {
   background: linear-gradient(180deg, rgba(242, 201, 76, 1) 0%, rgba(242, 153, 74, 1) 100%);
 }
 
-.join-p5 h2,
-.join-p5 h2:before {
-  background: linear-gradient(180deg, rgba(109, 213, 250, 1) 0%, rgba(41, 128, 185, 1) 100%);
+.join-p2 h3:before {
+  background: linear-gradient(180deg, rgba(2, 185, 255, 1) 0%, rgba(48, 79, 255, 1) 100%);
 }
 
-.join-p6 h2,
-.join-p6 h2:before {
-  background: linear-gradient(180deg, rgba(255, 195, 113, 1) 0%, rgba(255, 95, 109, 1) 100%);
+.join-p3 h3:before {
+  background: linear-gradient(180deg, rgba(143, 148, 251, 1) 0%, rgba(78, 84, 200, 1) 100%);
 }
 
-.join-p7 h2,
-.join-p7 h2:before {
-  background: linear-gradient(180deg, rgba(207, 139, 243, 1) 0%, rgba(167, 112, 239, 1) 100%)
+.join-p4 h3:before {
+  background: linear-gradient(180deg, rgba(242, 201, 76, 1) 0%, rgba(242, 153, 74, 1) 100%);
 }
 
-.join-p8 h2,
-.join-p8 h2:before {
-  background: linear-gradient(180deg, rgba(109, 213, 237, 1) 0%, rgba(33, 147, 176, 1) 100%);
+.join-p5 h3:before {
+  background: linear-gradient(180deg, rgba(2, 185, 255, 1) 0%, rgba(48, 79, 255, 1) 100%);
+}
+
+.join-p6 h3:before {
+  background: linear-gradient(180deg, rgba(143, 148, 251, 1) 0%, rgba(78, 84, 200, 1) 100%);
+}
+
+.join-p7 h3:before {
+  background: linear-gradient(180deg, rgba(242, 201, 76, 1) 0%, rgba(242, 153, 74, 1) 100%);
+}
+
+.join-p8 h3:before {
+  background: linear-gradient(180deg, rgba(2, 185, 255, 1) 0%, rgba(48, 79, 255, 1) 100%);
 }
 
 .join-p-cont * {
@@ -149,6 +205,17 @@
   font-size: 14px !important;
 }
 
+/* 文体活动 */
+.join-3 {
+  padding: 40px 0;
+  background: #f8f8f8;
+}
+
+.join-3-wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
 /* 响应式 */
 @media (max-width: 1280px) {}
 
@@ -157,31 +224,63 @@
     height: 150px;
   }
 
-  .join-banner {
-    margin-bottom: 20px;
-  }
-
   .join-cont {
-    padding: 0 20px;
+    padding: 20px 0;
   }
 
-  .join-cont-imgboxs,
-  .join-p {
-    margin-bottom: 30px;
+  .join-cont-imgboxs {
+    margin-bottom: 20px;
+    padding: 0 10px;
   }
-	
-	.join-p h2 {
-		padding: 0 12px;
-		font-size: 18px;
-		line-height: 40px;
-	}
-	
-	.join-p h2:before {
-		height: 40px;
-	}
 
   .join-cont-h1 {
     font-size: 20px;
+  }
+
+  .join-1,
+  .join-2,
+  .join-3 {
+    padding: 20px 10px;
+  }
+
+  .join-1 h2,
+  .join-2 h2,
+  .join-3 h2 {
+    padding-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .join-1-imgboxs {
+    display: block;
+  }
+
+  .join-1-imgbox {
+    margin: 0 0 20px;
+  }
+
+  .join-1-imgboxs>.join-1-imgbox:last-child {
+    margin-bottom: 0;
+  }
+
+  .join-1-imgbox img {
+    width: 100%;
+    height: auto;
+  }
+
+  .join-p h3 {
+    font-size: 18px;
+    line-height: 31px;
+  }
+
+  .join-p h3:before {
+    width: 31px;
+    height: 31px;
+    left: -38px;
+  }
+
+  .join-p {
+    margin-bottom: 25px;
+    padding-left: 38px;
   }
 
   .join-p:last-of-type {
