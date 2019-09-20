@@ -62,7 +62,6 @@
 #more_0 img {
   width: 335px;
   height: auto;
-  border: 1px dashed #333;
 }
 
 #more_0 p {
@@ -107,6 +106,7 @@
 
   #title {
     padding: 15px 20px;
+    font-size: 20px;
   }
 
   #title:before {

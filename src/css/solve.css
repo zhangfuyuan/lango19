@@ -91,20 +91,18 @@
 /* 大型轮播图 */
 .solve-banner {
   position: relative;
-  height: 700px;
 }
 
-.solve-banner-bg,
-.solve-cont-bg {
+.solve-banner-imgthumb,
+.solve-banner-img {
+  width: 100%;
+  height: auto;
+}
+
+.solve-banner-img {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: cover;
 }
 
 .solve-h2 {
@@ -151,10 +149,6 @@
 @media (max-width: 1280px) {}
 
 @media (max-width: 1024px) {
-  .solve-banner {
-    height: 250px;
-  }
-
   .solve-h2 {
     padding: 20px 0;
   }
@@ -169,6 +163,12 @@
   .solve-p2-wrap,
   .solve-p3-wrap {
     display: block;
+  }
+
+  .solve-p1-cont h2,
+  .solve-p2-cont h2,
+  .solve-p3-cont h2 {
+    font-size: 20px;
   }
 
   .solve-p1-imgthumb,

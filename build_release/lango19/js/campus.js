@@ -1,0 +1,1 @@
+var g_supportIEVersion=10,g_ua=navigator.userAgent.toLowerCase(),g_isIE=-1<g_ua.indexOf("msie");g_isIE&&g_ua.match(/msie ([\d.]+)/)&&g_ua.match(/msie ([\d.]+)/)[1]<g_supportIEVersion&&alert("系统检测到您正在使用IE"+g_supportIEVersion+"以下内核的浏览器（实际IE"+g_ua.match(/msie ([\d.]+)/)[1]+"），不能实现完美体验，请更换或升级浏览器访问！");

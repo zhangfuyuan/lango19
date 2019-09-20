@@ -99,7 +99,7 @@
 
 /* 校招流程 */
 .jc-process {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .jc-process-cont {
@@ -108,9 +108,9 @@
 
 .jc-process-txt,
 .jc-process-icon {
-  margin-bottom: 30px;
-  height: 100px;
-  line-height: 100px;
+  margin-bottom: 50px;
+  height: 80px;
+  line-height: 80px;
 }
 
 .jc-process-txt {
@@ -119,6 +119,14 @@
   color: #fff;
   font-size: 24px;
   background: rgba(214, 25, 24, 0.47);
+}
+
+.jc-process-d .jc-process-txt:nth-of-type(6),
+.jc-process-d .jc-process-icon:nth-of-type(7),
+.jc-process-d .jc-process-txt:nth-of-type(8),
+.jc-process-d .jc-process-icon:nth-of-type(9),
+.jc-process-d .jc-process-txt:nth-of-type(10) {
+	margin-bottom: 0;
 }
 
 .jc-process-icon {
@@ -404,9 +412,15 @@
     margin-bottom: 10px;
   }
 
-  .jc-process {
-    margin-bottom: 15px;
-  }
+	.jc-process {
+		margin-bottom: 20px;
+	}
+	
+	.jc-process-m .jc-process-txt:nth-of-type(7),
+	.jc-process-m .jc-process-icon:nth-of-type(8),
+	.jc-process-m .jc-process-txt:nth-of-type(9) {
+		margin-bottom: 0;
+	}
 
   .jc-process-title,
   .jc-jobs-title {

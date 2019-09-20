@@ -29,6 +29,7 @@ const cssBeforeSrc = 'src/css/*.css',
   hrefSuffixList = ['.html', '', ''],
   campusHrefPrefixList = ['.', '//www.cddd.com', '//campus.lango-tech.com'],
   campusHrefSuffixList = ['.html', '', ''],
+  baseHrefList = ['', '<base href="/XBH/">', '<base href="/XBH/">'],
   hrefIndex = 0;
 
 gulp.task('html', () => {
@@ -38,6 +39,10 @@ gulp.task('html', () => {
       version: {
         src: null,
         tpl: Date.now() + ''
+      },
+      baseHref: {
+        src: null,
+        tpl: baseHrefList[hrefIndex]
       },
       indexHref: {
         src: null,
@@ -143,4 +148,5 @@ gulp.task('connect', () => {
   })
 })
 
-gulp.task('default', gulp.series(gulp.parallel('html', 'js', 'css', 'images', 'image-resize', 'json', 'watchs', 'connect')))
+gulp.task('default', gulp.series(gulp.parallel('html', 'js', 'css', 'images', 'image-resize', 'json', 'watchs',
+  'connect')))

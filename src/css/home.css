@@ -7,27 +7,25 @@
 /* 大型轮播图 */
 .home-banner {
   position: relative;
+  max-height: 700px;
+  overflow: hidden;
 }
 
-.home-banner-bgthumb,
-.home-banner-bg {
+.home-banner-imgbox {
+  width: 100%;
   position: relative;
+}
+
+.home-banner-imgthumb,
+.home-banner-img {
+  width: 100%;
+  height: auto;
+}
+
+.home-banner-img {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  background-size: cover;
-}
-
-.home-banner-bgthumb {
-  height: 700px;
-}
-
-.home-banner-bg {
-  position: absolute;
-  height: 100%;
 }
 
 .home-banner.slick-dotted.slick-slider {
@@ -240,11 +238,8 @@
 @media (max-width: 1280px) {}
 
 @media (max-width: 1024px) {
-
-  .home-banner,
-  .home-banner-bgthumb,
-  .home-p2-bgthumb {
-    height: 250px;
+  .home-banner {
+    max-height: 373px;
   }
 
   .home-banner .slick-dots {
@@ -281,6 +276,10 @@
   .home-p2-cont,
   .home-p4-wrap {
     max-width: 1024px;
+  }
+
+  .home-p2-bgthumb {
+    height: 250px;
   }
 
   .home-p2-cont h2 {

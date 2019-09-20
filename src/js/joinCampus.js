@@ -5,20 +5,20 @@
 $.extend(true, window.Page || (window.Page = {}), {
   // 兼容的最低IE版本
   supportIEVersion: 10,
-  
+
   // 获取浏览器信息
   ua: navigator.userAgent.toLowerCase(),
-  
+
   // 判断是否为IE浏览器
   isIE: function() {
     return this.ua.indexOf('msie') > -1;
   },
-  
+
   // 判断当前浏览器是否为不受支持的浏览器
   isNotSupportIE: function() {
     return this.ua.match(/msie ([\d.]+)/) && this.ua.match(/msie ([\d.]+)/)[1] < this.supportIEVersion;
   },
-  
+
   // 校招岗位数据图
   jobMap: {},
 
@@ -107,7 +107,8 @@ $.extend(true, window.Page || (window.Page = {}), {
               '  </p>' +
               '</div>' +
               '<div class="job-btns flex-hc-vc">' +
-              '	 <a class="submit-resume" href="' + (_self.isMobile ? 'javascript:void(0);' : '//campus.lango-tech.com/front/resume') +
+              '	 <a class="submit-resume" href="' + (_self.isMobile ? 'javascript:void(0);' :
+                '//campus.lango-tech.com/front/resume') +
               '" onclick="' + (_self.isMobile ? 'Page.showPopup()' : '') + '" target="_blank">投递简历</a>' +
               '	 <a class="see-more" href="javascript:void(0);" onclick="Page.showPopup(' + __jobId + ', ' + __jobPid +
               ')">查看更多>></a>' +
@@ -148,7 +149,8 @@ $.extend(true, window.Page || (window.Page = {}), {
         '  </p>' +
         '</div>' +
         '<div class="job-btns flex-hc-vc">' +
-        '	 <a class="submit-resume" href="' + (_self.isMobile ? 'javascript:void(0);' : '//campus.lango-tech.com/front/resume') +
+        '	 <a class="submit-resume" href="' + (_self.isMobile ? 'javascript:void(0);' :
+          '//campus.lango-tech.com/front/resume') +
         '" onclick="' + (_self.isMobile ? 'Page.showPopup()' : '') + '" target="_blank">投递简历</a>' +
         '	 <a class="see-more" href="javascript:void(0);" onclick="Page.showPopup(' + item.jobId + ', ' + item.jobPid +
         ')">查看更多>></a>' +
@@ -175,7 +177,8 @@ $.extend(true, window.Page || (window.Page = {}), {
         _job.jobLi +
         '</p>' +
         '<div class="popup-btns flex-hc-vc">' +
-        '	 <a class="submit-resume" href="' + (this.isMobile ? 'javascript:void(0);' : '//campus.lango-tech.com/front/resume') +
+        '	 <a class="submit-resume" href="' + (this.isMobile ? 'javascript:void(0);' :
+          '//campus.lango-tech.com/front/resume') +
         '" onclick="' + (this.isMobile ? 'Page.showPopup()' : '') + '" target="_blank">投递简历</a>' +
         '</div>';
     } else {
@@ -232,3 +235,6 @@ if ($('#testLi').width() > 382) {
 }
 
 Page.initMain();
+
+// 初始化滚动展示动画
+new WOW().init();

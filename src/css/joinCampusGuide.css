@@ -85,12 +85,13 @@
 
 .jc-cont p {
   font-size: 14px;
-	line-height: 1.5;
+  line-height: 1.5;
 }
 
 .jc-cont h3 {
   margin-bottom: 30px;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .jc-cont-wrap {
@@ -120,14 +121,16 @@
 }
 
 .jc-p1-1 p:first-of-type,
-.jc-p1-2 p:first-of-type {
+.jc-p1-2 p:first-of-type,
+.jc-p1-3 p:first-of-type {
   margin-bottom: 20px;
 }
 
 .jc-p1-title+p,
 .jc-p1-1 p:last-of-type,
 .jc-p1-2 p:last-of-type,
-.jc-p1-3 p:last-of-type {
+.jc-p1-3 p:last-of-type,
+.jc-p1-4 p:last-of-type {
   margin-bottom: 35px;
 }
 
@@ -136,12 +139,12 @@
   font-weight: bold;
 }
 
-.jc-p1-4 h3,
-.jc-p1-4 p {
+.jc-p1-5 h3,
+.jc-p1-5 p {
   color: #000;
 }
 
-.jc-p1-4 p:last-of-type {
+.jc-p1-5 p:last-of-type {
   margin-bottom: 45px;
 }
 
@@ -218,18 +221,20 @@
   }
 
   .jc-p1-1 p:first-of-type,
-  .jc-p1-2 p:first-of-type {
+  .jc-p1-2 p:first-of-type,
+  .jc-p1-3 p:first-of-type {
     margin-bottom: 10px;
   }
 
   .jc-p1-title+p,
   .jc-p1-1 p:last-of-type,
   .jc-p1-2 p:last-of-type,
-  .jc-p1-3 p:last-of-type {
+  .jc-p1-3 p:last-of-type,
+  .jc-p1-4 p:last-of-type {
     margin-bottom: 15px;
   }
 
-  .jc-p1-4 p:last-of-type {
+  .jc-p1-5 p:last-of-type {
     margin-bottom: 25px;
   }
 }

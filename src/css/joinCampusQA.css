@@ -106,9 +106,14 @@
   margin-bottom: 0;
 }
 
+#content>div>p:first-of-type {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 #content p {
   line-height: 1.5;
-  font-size: 20px;
+  font-size: 14px;
   color: #333;
 }
 

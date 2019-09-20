@@ -52,6 +52,9 @@ $.extend(true, window.Page || (window.Page = {}), {
 
 Page.initMain();
 
+// 初始化滚动展示动画
+new WOW().init();
+
 $('.dd').on('click', function() {
   if (!Page.productMap)
     return false;
