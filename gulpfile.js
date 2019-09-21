@@ -13,28 +13,27 @@ const gulp = require('gulp'),
   rename = require('gulp-rename');
 
 const cssBeforeSrc = 'src/css/*.css',
-  cssAfterSrc = 'build/lango19/css/',
+  cssAfterSrcList = ['build/lango19/css/', 'release/lango19/css/'],
   jsBeforeSrc = 'src/js/*.js',
-  jsAfterSrc = 'build/lango19/js/',
+  jsAfterSrcList = ['build/lango19/js/', 'release/lango19/js/'],
   imagesBeforeSrc = 'src/images/*.+(jpeg|jpg|png)',
-  imagesAfterSrc = 'build/lango19/images/',
-  imagesThumbAfterSrc = 'build/lango19/images/thumb/',
+  imagesAfterSrcList = ['build/lango19/images/', 'release/lango19/images/'],
+  imagesThumbAfterSrcList = ['build/lango19/images/thumb/', 'release/lango19/images/thumb/'],
   htmlBeforeSrc = 'src/html/*.html',
-  htmlAfterSrc = 'build/',
+  htmlAfterSrcList = ['build/', 'release/'],
   jsonBeforeSrc = 'src/json/*.json',
-  jsonAfterSrc = 'build/lango19/data/',
-  indexHrefList = ['./index.html', '//www.abbb.com', '//lango-tech.com'],
-  campusHrefList = ['./campus.html', '//www.cddd.com', '//campus.lango-tech.com'],
-  hrefPrefixList = ['.', '//www.abbb.com/xbh', '//lango-tech.com/xbh'],
-  hrefSuffixList = ['.html', '', ''],
-  campusHrefPrefixList = ['.', '//www.cddd.com', '//campus.lango-tech.com'],
-  campusHrefSuffixList = ['.html', '', ''],
-  baseHrefList = ['', '<base href="/XBH/">', '<base href="/XBH/">'],
-  hrefIndex = 0;
+  jsonAfterSrcList = ['build/lango19/data/', 'release/lango19/data/'],
+  indexHrefList = ['./index.html', '//lango-tech.com'],
+  campusHrefList = ['./campus.html', '//campus.lango-tech.com'],
+  hrefPrefixList = ['.', '/xbh'],
+  hrefSuffixList = ['.html', ''],
+  baseHrefList = ['', `<base href="/XBH/"><script>document.write('<base href="http://'+window.location.host+'/XBH/" /> ')</script>`];
+
+let hrefIndex = 0;
 
 gulp.task('html', () => {
   return gulp.src(htmlBeforeSrc)
-    .pipe(changed(htmlAfterSrc))
+    .pipe(changed(htmlAfterSrcList[hrefIndex]))
     .pipe(htmlreplace({
       version: {
         src: null,
@@ -60,13 +59,9 @@ gulp.task('html', () => {
         src: null,
         tpl: hrefSuffixList[hrefIndex]
       },
-      campusHrefPrefix: {
+      hrefIndex: {
         src: null,
-        tpl: campusHrefPrefixList[hrefIndex]
-      },
-      campusHrefSuffix: {
-        src: null,
-        tpl: campusHrefSuffixList[hrefIndex]
+        tpl: hrefIndex
       },
     }))
     .pipe(htmlmin({
@@ -77,16 +72,16 @@ gulp.task('html', () => {
       minifyCSS: true,
       ignoreCustomFragments: [/<!--\[if.+\]>/, /<!\[endif\]-->/]
     }))
-    .pipe(gulp.dest(htmlAfterSrc))
+    .pipe(gulp.dest(htmlAfterSrcList[hrefIndex]))
     .pipe(connect.reload())
 })
 
 gulp.task('js', () => {
   return gulp.src([jsBeforeSrc])
-    .pipe(changed(jsAfterSrc))
+    .pipe(changed(jsAfterSrcList[hrefIndex]))
     .pipe(jshint())
     .pipe(uglify())
-    .pipe(gulp.dest(jsAfterSrc))
+    .pipe(gulp.dest(jsAfterSrcList[hrefIndex]))
 })
 
 gulp.task('css', () => {
@@ -98,23 +93,23 @@ gulp.task('css', () => {
   ];
 
   return gulp.src(cssBeforeSrc)
-    .pipe(changed(cssAfterSrc))
+    .pipe(changed(cssAfterSrcList[hrefIndex]))
     .pipe(postcss(plugins))
-    .pipe(gulp.dest(cssAfterSrc))
+    .pipe(gulp.dest(cssAfterSrcList[hrefIndex]))
 })
 
 gulp.task('images', () => {
   return gulp.src(imagesBeforeSrc)
-    .pipe(changed(imagesAfterSrc))
+    .pipe(changed(imagesAfterSrcList[hrefIndex]))
     .pipe(imagemin({
       progressive: true
     }))
-    .pipe(gulp.dest(imagesAfterSrc))
+    .pipe(gulp.dest(imagesAfterSrcList[hrefIndex]))
 })
 
 gulp.task('image-resize', () => {
   return gulp.src(imagesBeforeSrc)
-    .pipe(changed(imagesThumbAfterSrc))
+    .pipe(changed(imagesThumbAfterSrcList[hrefIndex]))
     .pipe(imageResize({
       width: 100,
       quality: .5,
@@ -123,13 +118,13 @@ gulp.task('image-resize', () => {
     .pipe(rename((path) => {
       path.basename += '_thumb'
     }))
-    .pipe(gulp.dest(imagesThumbAfterSrc))
+    .pipe(gulp.dest(imagesThumbAfterSrcList[hrefIndex]))
 })
 
 gulp.task('json', () => {
   return gulp.src([jsonBeforeSrc])
-    .pipe(changed(jsonAfterSrc))
-    .pipe(gulp.dest(jsonAfterSrc))
+    .pipe(changed(jsonAfterSrcList[hrefIndex]))
+    .pipe(gulp.dest(jsonAfterSrcList[hrefIndex]))
 })
 
 gulp.task('watchs', () => {
@@ -137,16 +132,27 @@ gulp.task('watchs', () => {
   gulp.watch(jsBeforeSrc, gulp.series('js'))
   gulp.watch(cssBeforeSrc, gulp.series('css'))
   gulp.watch(imagesBeforeSrc, gulp.series(gulp.parallel('images', 'image-resize')))
-  gulp.watch(jsonBeforeSrc, gulp.series('json'))
+  return gulp.watch(jsonBeforeSrc, gulp.series('json'))
 })
 
 gulp.task('connect', () => {
-  connect.server({
+  return connect.server({
     ip: '127.0.0.1',
     livereload: true,
     port: 8126
   })
 })
 
+gulp.task('release', () => {
+  hrefIndex = 1;
+
+  return new Promise((resolve, reject) => {
+    console.log('【正式发布】');
+    resolve();
+  })
+})
+
 gulp.task('default', gulp.series(gulp.parallel('html', 'js', 'css', 'images', 'image-resize', 'json', 'watchs',
   'connect')))
+
+gulp.task('ok', gulp.series('release', 'html', 'js', 'css', 'images', 'image-resize', 'json'))

@@ -87,6 +87,21 @@
 }
 
 /* 右侧产品详情 */
+.product-contbox {
+  animation: toleft .4s cubic-bezier(.4, 0, 0, 1);
+}
+
+@keyframes toleft {
+  0% {
+    transform: translate3d(40%, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translateZ(0);
+  }
+}
+
 .product-contbox h2 {
   padding-bottom: 10px;
   font-size: 20px;

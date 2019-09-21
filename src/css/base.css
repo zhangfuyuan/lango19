@@ -153,7 +153,7 @@ p {
   color: #1B2E45;
 }
 
-/* 登录注册 */
+/* 切换语言 */
 .header-entry {
   position: absolute;
   right: 0;
@@ -161,6 +161,7 @@ p {
   transform: translateY(-50%);
   color: #333;
   font-size: 14px;
+	opacity: 0;
 }
 
 /* 页中正文 */

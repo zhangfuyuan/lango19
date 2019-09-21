@@ -32,5 +32,9 @@ $.extend(true, window.Page || (window.Page = {}), {
 
 Page.initMain();
 
-// 初始化滚动展示动画
-new WOW().init();
+if (Page.isIE() && Page.isNotSupportIE()) {
+	
+} else {
+	// 初始化滚动展示动画
+	new WOW().init();
+}

@@ -46,14 +46,37 @@ $.extend(true, window.Page || (window.Page = {}), {
     $('.product-item').removeClass('active').eq(_index).addClass('active');
     $('#product_details').empty().append(this.curProduct['itemContentList'][_index]);
   },
+
+  // 切换产品分类延时器
+  switchTypeTimer: null,
+
+  // 切换产品分类动画
+  switchTypeAnimation: function(_$el, animationClassName, runtime) {
+    if (this.switchTypeTimer) {
+      clearTimeout(this.switchTypeTimer);
+      this.switchTypeTimer = null;
+      _$el.css('animation-name', 'none');
+    }
+    setTimeout(function() {
+      _$el.css('animation-name', animationClassName);
+      this.switchTypeTimer = setTimeout(function() {
+        _$el.css('animation-name', 'none');
+        this.switchTypeTimer = null;
+      }, runtime);
+    }, 16);
+  }
 });
 
 /********************************************* 以上声明，以下调用 *********************************************/
 
 Page.initMain();
 
-// 初始化滚动展示动画
-new WOW().init();
+if (Page.isIE() && Page.isNotSupportIE()) {
+	
+} else {
+	// 初始化滚动展示动画
+	new WOW().init();
+}
 
 $('.dd').on('click', function() {
   if (!Page.productMap)
@@ -61,9 +84,10 @@ $('.dd').on('click', function() {
 
   $('.dd').removeClass('active');
   $(this).addClass('active');
-  $('.product-type-right').addClass('hidden');
-  $('.product-contbox').removeClass('hidden');
+  $('#product_type_right').addClass('hidden');
+  $('#product_contbox').removeClass('hidden');
   Page.switchType($(this).data('index'));
+	Page.switchTypeAnimation($('#product_contbox'), 'toleft', 400);
 });
 
 $('.li').on('click', function() {
@@ -72,9 +96,10 @@ $('.li').on('click', function() {
 
   $('.dd').removeClass('active')
     .eq(+$(this).data('index') || 0).addClass('active');
-  $('.product-type-right').addClass('hidden');
-  $('.product-contbox').removeClass('hidden');
+  $('#product_type_right').addClass('hidden');
+  $('#product_contbox').removeClass('hidden');
   Page.switchType($(this).data('index'));
+  Page.switchTypeAnimation($('#product_contbox'), 'toleft', 400);
 });
 
 $('#product_cont_imgbox').on('mouseover click', 'img', function() {

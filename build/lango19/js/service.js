@@ -1,1 +1,1 @@
-$.extend(!0,window.Page||(window.Page={}),{}),(new WOW).init();
+$.extend(!0,window.Page||(window.Page={}),{}),Page.isIE()&&Page.isNotSupportIE()||(new WOW).init();

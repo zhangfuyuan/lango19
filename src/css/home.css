@@ -281,6 +281,10 @@
   .home-p2-bgthumb {
     height: 250px;
   }
+	
+	.home-p2-cont {
+	  padding: 0 10px;
+	}
 
   .home-p2-cont h2 {
     font-size: 20px;

@@ -73,12 +73,6 @@
 }
 
 .jc-cont p,
-.jc-cont h3,
-.jc-cont h2 {
-  max-width: 580px;
-}
-
-.jc-cont p,
 .jc-cont h3 {
   color: #333;
 }
