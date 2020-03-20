@@ -1,0 +1,103 @@
+{
+  "data": [{
+    "id": "0",
+    "show": 1,
+    "title": "硬件开发资源",
+    "subList": [{
+      "subId": "0",
+      "show": 1,
+      "title": "Mstar358方案",
+      "explain": "XM.M358S.D 是一款智能广告机主板，该板卡使用 Mstar358 方案，其配置为 4 核 A53 CPU，Android 6.0 系统，1.5GHZ 主频，标配为 1GB DDR 和 8 GB eMMC（存储可扩展），强劲的性能给您最流畅的运行体验。除此之外，XM.M358S.D 还具有强大的音视频处理能力，可支持最高 1080P @60fps 的 LVDS 视频输出。<br><br>XM.M358S.D 支持的接口有 DC,USB2.0*2,RJ45,HDMI,TF,line out。<br><br>XM.M358S.D 具有强大的多媒体播放功能，通过 USB 接口可以播放绝大多数多媒体文件，可支持最高分辨率1080p@60fps 视频。<br><br>同时可通过 USB2.0 接口轻松快捷的升级软件。",
+      "linkList": [{
+        "show": 1,
+        "name": "XBH_002_XM_M358S_D_FHD_DTMB_20200318225039",
+        "sub": "发布时间：2020-03-19 09:14 | 提取码：nas9",
+        "download": "固件下载",
+        "href": "https://pan.baidu.com/s/1cZxhIHAdscawOOzNxK1C-A"
+      }, {
+        "show": 1,
+        "name": "XBH_001_XM_M358S_D_FHD_DTMB_20191207211814",
+        "sub": "发布时间：2019-12-07 21:45 | 提取码：jiz7 | 备注信息：HDMI 通道旋转",
+        "download": "固件下载",
+        "href": "https://pan.baidu.com/s/1bks0JG1YWhUPErsnA_y8ug"
+      }]
+    }, {
+      "subId": "1",
+      "show": 1,
+      "title": "RK3288方案",
+      "explain": "LM.R3288.A 采用瑞芯微 RK3288 四核芯片方案，支持 Android5.1 系统，RK3288 是全球第一个四核 ARM 全新 A17 内核芯片、全球第一个支持最新超强 Mali-T76x 系列 GPU 的芯片以及全球第一个 4Kx2K 硬解 H.265 的芯片，支持主流音视频格式和图片的解码。<br><br>支持双屏异显功能，双 6/8/10 位的 LVDS 接口；<br>支持 2K LVDS 输出，能驱动 7 寸至 110 寸 2K 显示屏；<br>支持 eDP 显示接口输出；<br>支持 HDMI-2160p 输出；<br>支持 4K 级的视频播放；<br>支持红外遥控器、蓝牙、3G/4G 模块；<br>支持串口扩展、IO 口扩展、OTG 调试、MIPI 摄像头等功能；<br>丰富的接口，被广泛的应用到广告机、交互一体机、安防、工控等智能控制领域；<br>其硬件平台化、Android 智能化的特点，在需要进行人机交互，网络设备交互时，都可以在智能终端主板上进行使用。",
+      "linkList": [{
+        "show": 1,
+        "name": "LVDS-1920x1080-7.1",
+        "sub": "发布时间：2019-10-16 15:16 | 提取码：8dwi | 备注信息：Android7.1系统",
+        "download": "固件下载",
+        "href": "https://pan.baidu.com/s/1r2GEN8S6B1E0NW83a1GHtw"
+      }, {
+        "show": 1,
+        "name": "LVDS-1920x1080",
+        "sub": "发布时间：2019-08-25 17:39 | 提取码：189y | 备注信息：Android5.1系统",
+        "download": "固件下载",
+        "href": "https://pan.baidu.com/s/1ieiAxZzo79UUV8AfOJn6aw"
+      }]
+    }]
+  }, {
+    "id": "1",
+    "show": 1,
+    "title": "客户端开发资源",
+    "subList": [{
+      "subId": "0",
+      "show": 1,
+      "title": "信息发布系统",
+      "explain": "小百合智慧商显信息发布系统中心服务器端采用B/S架构，以总部为中心，二级地区机构设立二级服务器，以此类推，授权分区管理。<br><br>小百合智慧商显信息发布系统是集资源管理、内容管理、广告发布、消息推送、终端监控、客制界面、客制域名、系统管理等运用于一体的发布端，与终端进行通信连接，实现后台控制广告机终端的效果。",
+      "linkList": [{
+        "show": 1,
+        "name": "（云服务器版本）广域网标准版2.5.119",
+        "sub": "发布时间：2019-02-19 16:59 | 提取码：2fhk | 备注信息：稳定版",
+        "download": "网盘下载",
+        "href": "https://pan.baidu.com/s/1ntWDXzAn6bwRctpVJpy0VA"
+      }, {
+        "show": 1,
+        "name": "标准版2.12.52",
+        "sub": "发布时间：2020-03-18 11:47 | 提取码：mv1c | 备注信息：最新版",
+        "download": "网盘下载",
+        "href": "https://pan.baidu.com/s/1mtUrv9FoQKMOvNnJgTUayg"
+      }]
+    }, {
+      "subId": "1",
+      "show": 1,
+      "title": "小百合播放器",
+      "explain": "由手机绑定，系统设置，系统信息，服务器设置组成：<br>手机绑定：在已经连接上服务器的前期下，使用手机端发布软件小百合秀秀扫描二维码即可使用小百合秀秀手机 APP 发布广告，显示二维码的方式：服务器设置里面机构 ID 输入 0001 或者已经绑定的手机解绑<br>系统设置：进入系统设置 APP<br>系统信息：显示当前的存储容量，APP 版本信息<br>服务器设置：连接 web 信息发布系统",
+      "linkList": [{
+        "show": 1,
+        "name": "Gen.1.2.954.191126.121",
+        "sub": "发布时间：2019-11-26 15:16 | 提取码：h1xl | 备注信息：适用于358、3288等主板",
+        "download": "网盘下载",
+        "href": "https://pan.baidu.com/s/1VgZ7i71sbhT2PiZ_A_OLPg"
+      }, {
+        "show": 1,
+        "name": "Gen.1.2.776.180811.R",
+        "sub": "发布时间：2019-01-31 20:12 | 提取码：pm9e | 备注信息：精简版",
+        "download": "网盘下载",
+        "href": "https://pan.baidu.com/s/15bLeZr1jVrBO8I8oIjkdsw"
+      }]
+    }, {
+      "subId": "2",
+      "show": 1,
+      "title": "小百合秀秀",
+      "explain": "小百合秀秀是一款主要为小型商户的发布商业信息的轻量级手机应用，用户可以使用小百合APP创建节目，并把节目发送给指定的广告机屏幕进行播放。<br><br>Android版本手机进入应用商城，搜索“小百合秀秀”，进行下载安装。<br><br>iOS版本手机进入AppStore，搜索“小百合秀秀”，进行下载安装。",
+      "linkList": [{
+        "show": 1,
+        "name": "ShowMaker-v1.2.4.265_2019-07-24-release.apk",
+        "sub": "发布时间：2019-07-24 09:35 | 提取码：dcwz | 备注信息：最新版",
+        "download": "网盘下载",
+        "href": "https://pan.baidu.com/s/10GF3vQ0n-pSe_mExOJ050Q"
+      }, {
+        "show": 1,
+        "name": "ShowMaker-v1.2.3.XBH_2019-04-03-debug.apk",
+        "sub": "发布时间：2019-10-31 21:11 | 提取码：73c8 | 备注信息：Debug版",
+        "download": "网盘下载",
+        "href": "https://pan.baidu.com/s/1XJj3IcBozpwdXbiRJHsUKQ"
+      }]
+    }]
+  }]
+}

@@ -27,11 +27,13 @@ $.extend(true, window.Page || (window.Page = {}), {
       // 初始化岗位分类
       var _typeHtml = '';
       var _firstTypeId = 0;
+      var _firstFlag = true;
+      var _hideNum = 0;
       $.each(_typeList, function(index, item) {
         // state 为 0 则显示
         if (item['state'] == 0) {
-          _typeHtml += '<li class="' + (index == 0 ? 'active' : '') + '" onclick="Page.switchType(' + item['id'] +
-            ', ' + index + ')">' + item['title'] + '</li>';
+          _typeHtml += '<li class="' + (_firstFlag ? 'active' : '') + '" onclick="Page.switchType(' + item['id'] +
+            ', ' + (index-_hideNum) + ')">' + item['title'] + '</li>';
 
           _self.jobMap[item['id']] = {
             typeId: item['id'],
@@ -39,10 +41,14 @@ $.extend(true, window.Page || (window.Page = {}), {
             jobs: {}
           };
 
-          if (index == 0) {
+          if (_firstFlag) {
             _firstTypeId = item['id'];
           }
-        }
+
+          _firstFlag = false;
+        } else {
+          _hideNum++;
+				}
       });
       $('#typeBox').empty().append(_typeHtml);
 
@@ -59,7 +65,7 @@ $.extend(true, window.Page || (window.Page = {}), {
         var __jobDuty = '';
 
         // state 为 0 则显示
-        if (item['job']['state'] == 0) {
+        if (item['job']['state']==0 && _self.jobMap[__jobPid]) {
           __jobLi = (function(list) {
             var str = '';
 
