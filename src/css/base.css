@@ -5,6 +5,105 @@ body {
   font: 14px "Microsoft YaHei UI", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", sans-serif;
 }
 
+/* lango-tech.cn 备案处理 */
+body.for-filing,
+.for-filing main,
+.for-filing main>div,
+.for-filing .main-right-wrap {
+  background: #00162A !important;
+  background-color: #00162A !important;
+}
+
+.for-filing .header,
+.for-filing .footer,
+.for-filing .header-sub-menu,
+.for-filing #service_self>div>div,
+.for-filing #common_problem>div>div,
+.for-filing .news-items li,
+.for-filing #content p,
+.for-filing #content span,
+.for-filing .join-1,
+.for-filing .join-3,
+.for-filing .js-type li,
+.for-filing .js-job li,
+.for-filing .job-title,
+.for-filing .submit-resume,
+.for-filing .popup,
+.for-filing .jc-job li,
+.for-filing .markdown-body table tr,
+.for-filing .markdown-body .highlight pre,
+.for-filing .markdown-body pre,
+.for-filing #more_0 {
+  background: #000 !important;
+  background-color: #000 !important;
+}
+
+.for-filing *,
+.for-filing .join-p-cont *,
+.for-filing #content p>span {
+  color: #fff !important;
+}
+
+.for-filing .header-menu-page.active:before,
+.for-filing .home-banner .slick-dots li.slick-active,
+.for-filing .home-p1 h2:before,
+.for-filing .home-p3 h2:before,
+.for-filing .home-p5 h2:before,
+.for-filing .solve-p1-cont h2:before,
+.for-filing .solve-p2-cont h2:before,
+.for-filing .solve-p3-cont h2:before,
+.for-filing .see-more,
+.for-filing .product-type-right li:hover,
+.for-filing .product-type-left dd:hover,
+.for-filing .join-1 h2:before,
+.for-filing .join-2 h2:before,
+.for-filing .join-3 h2:before,
+.for-filing .js-type li.active,
+.for-filing .popup-title:before,
+.for-filing .jc-jobs-title:before,
+.for-filing .jc-process-title:before,
+.for-filing .jc-type li.active,
+.for-filing .jc-banner-cont a,
+.for-filing .jc-p1-title:before,
+.for-filing .jc-p2-title:before,
+.for-filing .main-left-sidebar li a.active,
+.for-filing .main-left-sidebar li a:hover,
+.for-filing .main-left-sidebar dd a.active,
+.for-filing .main-left-sidebar dd a:hover,
+.for-filing #downloadList li:hover,
+.for-filing #title:before {
+  background: #1890FF !important;
+  background-color: #1890FF !important;
+}
+
+.for-filing .header-sub-menu-link:hover {
+  color: #1890FF !important;
+}
+
+.for-filing .product-item.active,
+.for-filing .product-item:hover,
+.for-filing .product-cont-imgbox img:hover,
+.for-filing .js-type li.active,
+.for-filing .popup-btns .submit-resume,
+.for-filing .jc-type li.active {
+  border-color: #1890FF !important;
+}
+
+.for-filing .js-type li.active:after,
+.for-filing .jc-type li.active:after {
+  border-top-color: #1890FF !important;
+}
+
+.for-filing .jc-process-txt {
+  background: rgba(24, 144, 255, .47);
+}
+
+.for-filing #content p.download-list-name,
+.for-filing #content p.download-list-sub {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 a:link,
 a:visited,
 a:hover,
@@ -60,6 +159,12 @@ p {
 .flex-v {
   display: flex;
   flex-direction: column;
+}
+
+.flex-vb {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .flex-vc-hc {
@@ -177,7 +282,7 @@ p {
   height: 0;
   overflow: hidden;
   background: #f8f8f8;
-  box-shadow: 0 4px 12px 0 rgba(0,0,0,.08);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .08);
   transition: all .5s;
 }
 
@@ -225,7 +330,7 @@ p {
   transform: translateY(-50%);
   color: #333;
   font-size: 14px;
-	opacity: 0;
+  opacity: 0;
 }
 
 /* 页中正文 */
@@ -382,7 +487,7 @@ p {
   .header-menu-page.active .header-menu-link {
     border-bottom: 3px solid #D61918;
   }
-  
+
   .menu-has-sub .header-menu-link::before,
   .header-sub-menu {
     display: none;

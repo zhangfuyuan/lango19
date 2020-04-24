@@ -63,7 +63,7 @@
 .join-cont-imgthumb,
 .join-cont-img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 .join-cont-img {
@@ -104,25 +104,12 @@
   position: relative;
 }
 
-.join-1-imgbox {
+.join-1-imgbox:not(:first-child) {
   margin-left: 20px;
-  flex: 1;
 }
 
-.join-1-imgbox:first-child {
-  margin-left: 0;
-}
-
-.join-1-imgbox>div:first-child {
-  margin-bottom: 20px;
-}
-
-.join-1-imgbox>img {
-  height: 600px;
-}
-
-.join-1-imgbox>div>img {
-  height: 290px;
+.join-1-imgbox>div:not(:first-child) {
+  margin-top: 20px;
 }
 
 /* 薪酬福利 */
@@ -247,12 +234,18 @@
     display: block;
   }
 
+  .join-1-imgbox,
+  .join-1-imgbox>div {
+    width: 100% !important;
+    height: auto !important;
+  }
+
   .join-1-imgbox {
-    margin: 0 0 20px;
+    margin: 0 0 20px !important;
   }
 
   .join-1-imgboxs>.join-1-imgbox:last-child {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 
   .join-1-imgbox img {

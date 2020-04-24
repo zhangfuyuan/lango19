@@ -21,8 +21,8 @@ const cssBeforeSrc = 'src/css/*.css',
   imagesThumbAfterSrcList = ['build/lango19/images/thumb/', 'release/lango19/images/thumb/'],
   htmlBeforeSrc = 'src/html/*.html',
   htmlAfterSrcList = ['build/', 'release/'],
-  jsonBeforeSrc = 'src/json/*',
-  jsonAfterSrcList = ['build/lango19/data/', 'release/lango19/data/'],
+  dataBeforeSrc = 'src/data/**/*',
+  dataAfterSrcList = ['build/lango19/data/', 'release/lango19/data/'],
   indexHrefList = ['./index.html', '//lango-tech.com'],
   campusHrefList = ['./campus.html', '//campus.lango-tech.com'],
   hrefPrefixList = ['.', '/xbh'],
@@ -121,10 +121,10 @@ gulp.task('image-resize', () => {
     .pipe(gulp.dest(imagesThumbAfterSrcList[hrefIndex]))
 })
 
-gulp.task('json', () => {
-  return gulp.src([jsonBeforeSrc])
-    .pipe(changed(jsonAfterSrcList[hrefIndex]))
-    .pipe(gulp.dest(jsonAfterSrcList[hrefIndex]))
+gulp.task('data', () => {
+  return gulp.src([dataBeforeSrc])
+    .pipe(changed(dataAfterSrcList[hrefIndex]))
+    .pipe(gulp.dest(dataAfterSrcList[hrefIndex]))
 })
 
 gulp.task('watchs', () => {
@@ -132,7 +132,7 @@ gulp.task('watchs', () => {
   gulp.watch(jsBeforeSrc, gulp.series('js'))
   gulp.watch(cssBeforeSrc, gulp.series('css'))
   gulp.watch(imagesBeforeSrc, gulp.series(gulp.parallel('images', 'image-resize')))
-  return gulp.watch(jsonBeforeSrc, gulp.series('json'))
+  return gulp.watch(dataBeforeSrc, gulp.series('data'))
 })
 
 gulp.task('connect', () => {
@@ -152,7 +152,7 @@ gulp.task('release', () => {
   })
 })
 
-gulp.task('default', gulp.series(gulp.parallel('html', 'js', 'css', 'images', 'image-resize', 'json', 'watchs',
+gulp.task('default', gulp.series(gulp.parallel('html', 'js', 'css', 'images', 'image-resize', 'data', 'watchs',
   'connect')))
 
-gulp.task('ok', gulp.series('release', 'html', 'js', 'css', 'images', 'image-resize', 'json'))
+gulp.task('ok', gulp.series('release', 'html', 'js', 'css', 'images', 'image-resize', 'data'))

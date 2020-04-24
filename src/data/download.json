@@ -2,7 +2,7 @@
   "data": [{
     "id": "0",
     "show": 1,
-    "title": "硬件开发资源",
+    "title": "硬件资源",
     "subList": [{
       "subId": "0",
       "show": 1,
@@ -43,7 +43,7 @@
   }, {
     "id": "1",
     "show": 1,
-    "title": "客户端开发资源",
+    "title": "软件资源",
     "subList": [{
       "subId": "0",
       "show": 1,
@@ -97,6 +97,23 @@
         "sub": "发布时间：2019-10-31 21:11 | 提取码：73c8 | 备注信息：Debug版",
         "download": "网盘下载",
         "href": "https://pan.baidu.com/s/1XJj3IcBozpwdXbiRJHsUKQ"
+      }]
+    }]
+  }, {
+    "id": "2",
+    "show": 1,
+    "title": "SDK开发资源",
+    "subList": [{
+      "subId": "0",
+      "show": 1,
+      "title": "SDK_v2.1",
+      "explain": "一 环境配置过程<br>1、导入平台jar包rk_framework2.jar<br><img src=\"lango19/images/download_20200405_1.png\" /><br>2、配置平台的<br>rk_platform.jks(keystore):<br><img src=\"lango19/images/download_20200405_2.png\" /><br>3、配置系统权限<br>导入提供的key，并在manifest文件中加android:sharedUserId=\"android.uid.system\"<br><img src=\"lango19/images/download_20200405_3.png\" /><br><br><a href=\"/xbh/docs?index=5\">点击查看更多SDK在线文档</a>",
+      "linkList": [{
+        "show": 1,
+        "name": "SDK_v2.1",
+        "sub": "发布时间：2020-04-05 12:26",
+        "download": "SDK下载",
+        "href": "http://lango-tech.cn/apm_file/xbh/SDK_v2.1.zip"
       }]
     }]
   }]
